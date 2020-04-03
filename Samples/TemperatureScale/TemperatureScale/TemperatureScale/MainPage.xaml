@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="TemperatureScale.MainPage">
+
+    <Grid >
+        <Grid.VerticalOptions>
+            <OnPlatform x:TypeArguments="LayoutOptions">
+                <On Platform="UWP"
+                    Value="Center" />
+                <On Platform="Android"
+                    Value="Fill" />
+                <On Platform="iOS"
+                    Value="Fill" />
+            </OnPlatform>
+        </Grid.VerticalOptions>
+        <Grid.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="UWP"
+                    Value="600" />
+            </OnPlatform>
+        </Grid.HeightRequest>
+        <gauge:SfLinearGauge Orientation="OrientationVertical">
+            <gauge:SfLinearGauge.Scales>
+                <gauge:LinearScale Interval="18"
+                                   LabelColor="Gray"
+                                   LabelPostfix="°F"
+                                   MaximumValue="212"
+                                   MinimumValue="32"
+                                   MinorTicksPerInterval="1"
+                                   ScaleBarColor="LightGray"
+                                   ScaleBarLength="500"
+                                   ScaleBarSize="16"
+                                   Offset="-8">
+                    <gauge:LinearScale.LabelOffset>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="50" />
+                            <On Platform="Android"
+                                Value="0" />
+                            <On Platform="iOS"
+                                Value="0" />
+                        </OnPlatform>
+                    </gauge:LinearScale.LabelOffset>
+                    <gauge:LinearScale.MajorTickSettings>
+                        <gauge:LinearTickSettings Thickness="1"
+                                                  Offset="20"
+                                                  Color="Gray" />
+                    </gauge:LinearScale.MajorTickSettings>
+                    <gauge:LinearScale.MinorTickSettings>
+                        <gauge:LinearTickSettings Color="Gray"
+                                                  Offset="20" />
+                    </gauge:LinearScale.MinorTickSettings>
+                </gauge:LinearScale>
+                <gauge:LinearScale Interval="10"
+                                   LabelColor="Gray"
+                                   LabelPostfix="°C"
+                                   LabelOffset="-50"
+                                   MaximumValue="100"
+                                   MinimumValue="0"
+                                   MinorTicksPerInterval="1"
+                                   OpposedPosition="True"
+                                   ScaleBarColor="LightGray"
+                                   ScaleBarLength="500"
+                                   ScaleBarSize="16"
+                                   Offset="8">
+                    <gauge:LinearScale.MajorTickSettings>
+                        <gauge:LinearTickSettings Thickness="1"
+                                                  Offset="-20"
+                                                  Color="Gray" />
+                    </gauge:LinearScale.MajorTickSettings>
+                    <gauge:LinearScale.MinorTickSettings>
+                        <gauge:LinearTickSettings Color="Gray"
+                                                  Offset="-20" />
+                    </gauge:LinearScale.MinorTickSettings>
+                </gauge:LinearScale>
+                <gauge:LinearScale CornerRadiusType="Both"
+                                   Interval="10"
+                                   LabelColor="Black"
+                                   MaximumValue="100"
+                                   MinimumValue="0"
+                                   ScaleBarColor="Transparent"
+                                   ScaleBarLength="500"
+                                   ScaleBarSize="32"
+                                   ShowLabels="False"
+                                   ShowTicks="False">
+                    <gauge:LinearScale.MajorTickSettings>
+                        <gauge:LinearTickSettings Color="Gray" />
+                    </gauge:LinearScale.MajorTickSettings>
+                    <gauge:LinearScale.MinorTickSettings>
+                        <gauge:LinearTickSettings Color="Gray" />
+                    </gauge:LinearScale.MinorTickSettings>
+                    <gauge:LinearScale.Pointers>
+                        <gauge:BarPointer CornerRadius="12"
+                                          CornerRadiusType="End"
+                                          Thickness="30"
+                                          Color="Red"
+                                          Value="86" />
+                    </gauge:LinearScale.Pointers>
+                </gauge:LinearScale>
+            </gauge:SfLinearGauge.Scales>
+
+            <gauge:SfLinearGauge.Annotations>
+                <gauge:LinearGaugeAnnotation >
+                    <gauge:LinearGaugeAnnotation.OffsetX>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="0.4" />
+                            <On Platform="Android"
+                                Value="0.2" />
+                            <On Platform="iOS"
+                                Value="0.2" />
+                        </OnPlatform>
+                    </gauge:LinearGaugeAnnotation.OffsetX>
+                    <gauge:LinearGaugeAnnotation.OffsetY>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="0.95" />
+                            <On Platform="Android"
+                                Value="0.91" />
+                            <On Platform="iOS"
+                                Value="0.91" />
+                        </OnPlatform>
+                    </gauge:LinearGaugeAnnotation.OffsetY>
+                    <gauge:LinearGaugeAnnotation.View>
+                        <Label Text="°C"
+                               FontAttributes="Bold" />
+                    </gauge:LinearGaugeAnnotation.View>
+                </gauge:LinearGaugeAnnotation>
+                <gauge:LinearGaugeAnnotation OffsetX="0.5">
+                    <gauge:LinearGaugeAnnotation.OffsetY>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="0.95" />
+                            <On Platform="Android"
+                                Value="0.91" />
+                            <On Platform="iOS"
+                                Value="0.91" />
+                        </OnPlatform>
+                    </gauge:LinearGaugeAnnotation.OffsetY>
+                    <gauge:LinearGaugeAnnotation.View>
+                        <border:SfBorder BackgroundColor="Red"
+                                         BorderColor="Red"
+                                         BorderWidth="0"
+                                         HeightRequest="50"
+                                         WidthRequest="50"
+                                         CornerRadius="25" />
+                    </gauge:LinearGaugeAnnotation.View>
+                </gauge:LinearGaugeAnnotation>
+                <gauge:LinearGaugeAnnotation >
+                    <gauge:LinearGaugeAnnotation.OffsetX>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="0.6" />
+                            <On Platform="Android"
+                                Value="0.8" />
+                            <On Platform="iOS"
+                                Value="0.8" />
+                        </OnPlatform>
+                    </gauge:LinearGaugeAnnotation.OffsetX>
+                    <gauge:LinearGaugeAnnotation.OffsetY>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="0.95" />
+                            <On Platform="Android"
+                                Value="0.91" />
+                            <On Platform="iOS"
+                                Value="0.91" />
+                        </OnPlatform>
+                    </gauge:LinearGaugeAnnotation.OffsetY>
+                    <gauge:LinearGaugeAnnotation.View>
+                        <Label Text="°F"
+                               FontAttributes="Bold" />
+                    </gauge:LinearGaugeAnnotation.View>
+                </gauge:LinearGaugeAnnotation>
+            </gauge:SfLinearGauge.Annotations>
+        </gauge:SfLinearGauge>
+    </Grid>
+
+</ContentPage>
