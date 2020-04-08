@@ -67,8 +67,8 @@
                                    OpposedPosition="True"
                                    ScaleBarColor="LightGray"
                                    ScaleBarLength="500"
-                                   ScaleBarSize="16"
-                                   Offset="8">
+                                   ScaleBarSize="28"
+                                   Offset="-8">
                     <gauge:LinearScale.MajorTickSettings>
                         <gauge:LinearTickSettings Thickness="1"
                                                   Offset="-20"
@@ -77,23 +77,6 @@
                     <gauge:LinearScale.MinorTickSettings>
                         <gauge:LinearTickSettings Color="Gray"
                                                   Offset="-20" />
-                    </gauge:LinearScale.MinorTickSettings>
-                </gauge:LinearScale>
-                <gauge:LinearScale CornerRadiusType="Both"
-                                   Interval="10"
-                                   LabelColor="Black"
-                                   MaximumValue="100"
-                                   MinimumValue="0"
-                                   ScaleBarColor="Transparent"
-                                   ScaleBarLength="500"
-                                   ScaleBarSize="32"
-                                   ShowLabels="False"
-                                   ShowTicks="False">
-                    <gauge:LinearScale.MajorTickSettings>
-                        <gauge:LinearTickSettings Color="Gray" />
-                    </gauge:LinearScale.MajorTickSettings>
-                    <gauge:LinearScale.MinorTickSettings>
-                        <gauge:LinearTickSettings Color="Gray" />
                     </gauge:LinearScale.MinorTickSettings>
                     <gauge:LinearScale.Pointers>
                         <gauge:BarPointer CornerRadius="12"
@@ -132,7 +115,17 @@
                                FontAttributes="Bold" />
                     </gauge:LinearGaugeAnnotation.View>
                 </gauge:LinearGaugeAnnotation>
-                <gauge:LinearGaugeAnnotation OffsetX="0.5">
+                <gauge:LinearGaugeAnnotation>
+                    <gauge:LinearGaugeAnnotation.OffsetX>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="UWP"
+                                Value="0.497" />
+                            <On Platform="Android"
+                                Value="0.48" />
+                            <On Platform="iOS"
+                                Value="0.48" />
+                        </OnPlatform>
+                    </gauge:LinearGaugeAnnotation.OffsetX>
                     <gauge:LinearGaugeAnnotation.OffsetY>
                         <OnPlatform x:TypeArguments="x:Double">
                             <On Platform="UWP"
